@@ -1,11 +1,13 @@
 package core;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 	public class PF_External {
 		Properties p = new Properties();
 		String getPropertyOut(String prop_file, String property) throws IOException{
+		p.load(new FileInputStream(prop_file));
 		return p.getProperty(property);	
 		}
 		
